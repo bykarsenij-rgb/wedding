@@ -235,15 +235,23 @@ height: 350px;
             border-radius: 2px;
         }
 
-        /* МОБИЛЬНАЯ ВЕРСИЯ */
+               /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 4rem; }
+            .hero {
+                /* Принудительно повторяем настройки фона для телефонов */
+                background-image: url('main_bg.jpg.JPG') !important; 
+                background-size: cover !important;
+                background-position: center top !important;
+                height: 100vh;
+            }
+            .hero h1 { font-size: 3.5rem; } /* Уменьшил шрифт, чтобы влезал */
             .hero .bottom-date { right: 20px; font-size: 1.5rem; }
             .flex-details { flex-direction: column; text-align: center; }
             .event-info { text-align: center; }
             .section-footer { flex-direction: column; align-items: flex-start; gap: 50px; }
             .footer-image, .small-photo-frame { width: 100%; }
         }
+
     </style>
 </head>
 <body>
