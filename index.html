@@ -173,7 +173,7 @@
         }
 
         .rsvp-form label {
-            display: block;
+            display: flex;
             margin-top: 25px;
             font-family: var(--font-clean);
             font-size: 0.8rem;
@@ -194,8 +194,9 @@
 
         .rsvp-form input:focus { border-bottom-color: var(--gold-accent); }
 
-        .radio-box { margin: 15px 0; font-size: 1.2rem; }
+        .radio-box { margin: 15px 0; font-size: 1.2rem; display: flex; align-items: center; }
         .radio-box input { margin-right: 10px; cursor: pointer; }
+        .radio-box label { display: inline; margin: 0; }
 
         .btn-send {
             margin-top: 40px;
