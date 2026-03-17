@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приглашение на свадьбу: Илья и Виталина</title>
+    
+    <!-- Подключаем шрифты: Рукописный, Классический и Современный -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --text-color: #333333;
+            --gold-accent: #b89c7d;
+            --bg-color: #fdfdfd;
+            --font-main: 'Cormorant Garamond', serif;
+            --font-accent: 'Great Vibes', cursive;
+            --font-clean: 'Montserrat', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            font-family: var(--font-main);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 1. ГЛАВНЫЙ ЭКРАН */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('main_bg.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero .wedding-day {
+            font-family: var(--font-clean);
+            font-weight: 200;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-accent);
+            font-size: 7rem;
+            margin: 0;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .bottom-date {
+            position: absolute;
+            bottom: 50px;
+            right: 60px;
+            font-size: 2rem;
+            font-family: var(--font-main);
+            letter-spacing: 2px;
+        }
+
+        /* 2. ТЕКСТ ПРИГЛАШЕНИЯ */
+        .section-intro {
+            padding: 100px 10%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .invite-message {
+            font-size: 2rem;
+            line-height: 1.4;
+            max-width: 600px;
+            text-align: left;
+            margin-bottom: 80px;
+            font-weight: 300;
+        }
+
+        .flex-details {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .small-photo-frame {
+            width: 350px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 20px 20px 0px -2px rgba(184, 156, 125, 0.2);
+        }
+
+        .event-info {
+            text-align: left;
+            font-size: 1.4rem;
+        }
+
+        .event-info h3 {
+            font-family: var(--font-clean);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+        }
+
+        /* 3. ПОДАРКИ */
+        .section-gifts {
+            background-color: #f8f8f8;
+            padding: 80px 15%;
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* 4. РЕГИСТРАЦИЯ (RSVP) */
+        .section-rsvp {
+            padding: 100px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-rsvp h2 {
+            font-family: var(--font-accent);
+            font-size: 4rem;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+
+        .rsvp-intro {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            white-space: pre-line;
+        }
+
+        .rsvp-form {
+            text-align: left;
+            background: #fff;
+            padding: 50px;
+            border: 1px solid #eee;
+        }
+
+        .rsvp-form label {
+            display: block;
+            margin-top: 25px;
+            font-family: var(--font-clean);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rsvp-form input[type="text"] {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-family: var(--font-main);
+            font-size: 1.3rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .rsvp-form input:focus { border-bottom-color: var(--gold-accent); }
+
+        .radio-box { margin: 15px 0; font-size: 1.2rem; }
+        .radio-box input { margin-right: 10px; cursor: pointer; }
+
+        .btn-send {
+            margin-top: 40px;
+            width: 100%;
+            padding: 18px;
+            background: var(--text-color);
+            color: #fff;
+            border: none;
+            font-family: var(--font-clean);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .btn-send:hover { background: var(--gold-accent); }
+
+        /* 5. ТАЙМЕР */
+        .countdown-section {
+            padding: 60px 0;
+            background: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+
+        .countdown-section #timer-days {
+            font-size: 4rem;
+            font-family: var(--font-accent);
+            color: var(--gold-accent);
+        }
+
+        /* 6. КОНТАКТЫ */
+        .section-footer {
+            padding: 100px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .contacts-area h3 {
+            font-family: var(--font-clean);
+            letter-spacing: 6px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .contacts-area p { font-size: 1.3rem; margin: 8px 0; }
+
+        .footer-image {
+            width: 450px;
+height: 350px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .hero .bottom-date { right: 20px; font-size: 1.5rem; }
+            .flex-details { flex-direction: column; text-align: center; }
+            .event-info { text-align: center; }
+            .section-footer { flex-direction: column; align-items: flex-start; gap: 50px; }
+            .footer-image, .small-photo-frame { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ЭКРАН 1: ГЛАВНЫЙ -->
+    <section class="hero">
+        <div class="wedding-day">Wedding day</div>
+        <h1>Илья and Виталина</h1>
+        <div class="bottom-date">31 июля 2026</div>
+    </section>
+
+    <!-- ЭКРАН 2: ПРИГЛАШЕНИЕ -->
+    <section class="section-intro">
+        <div class="invite-message">
+            Дорогие и близкие люди!
+            Рады пригласить Вас на свадебное
+            торжество, разделить с нами
+            мгновения важного 
+            дня в нашей жизни!
+        </div>
+
+        <div class="flex-details">
+            <img src="small_photo.jpg" alt="Фото пары" class="small-photo-frame">
+            <div class="event-info">
+                <h3>Сбор гостей / фуршет</h3>
+                <p><strong>31 июля 2026</strong></p>
+                <p><strong>14:00</strong></p>
+                <p>Брестский район, д. Семисосны, 6/1,<br>Брест, Брестская область 224704, Беларусь</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ЭКРАН 3: ТЕКСТ ПРО ПОДАРКИ -->
+    <section class="section-gifts">
+        <div class="gifts-content">
+            Дорогие гости! Ваше присутствие — главный подарок для нас. Чтобы не затруднять вас выбором букета (который простоит недолго). Если вы хотите порадовать нас, лучшим подарком станут подарочные сертификаты в магазин «5 элемент» или бутылка хорошего алкоголя.
+        </div>
+    </section>
+
+    <!-- ЭКРАН 4: RSVP -->
+    <section class="section-rsvp">
+        <h2>Подтверждение</h2>
+        <div class="rsvp-intro">
+            Мы с нетерпением ждем встречи с вами!
+            Просим подтвердить свое присутствие 
+            до 30 июня 2026 г.
+        </div>
+
+        <form class="rsvp-form">
+            <label>Имя *</label>
+            <input type="text" required>
+
+            <label>Фамилия *</label>
+            <input type="text" required>
+
+            <label>Будете ли вы присутствовать? *</label>
+            <div class="radio-box"><input type="radio" name="attend" id="y"> <label for="y">Да</label></div>
+            <div class="radio-box"><input type="radio" name="attend" id="n"> <label for="n">Нет</label></div>
+
+            <label>До места торжества будет организован транспорт. Нужен ли он вам? *</label>
+            <div class="radio-box"><input type="radio" name="bus" id="by"> <label for="by">Да</label></div>
+            <div class="radio-box"><input type="radio" name="bus" id="bn"> <label for="bn">Нет, доберусь на своем транспорте</label></div>
+
+            <button type="submit" class="btn-send">Отправить</button>
+        </form>
+    </section>
+
+    <!-- ЭКРАН 5: СЧЕТЧИК -->
+    <section class="countdown-section">
+        <div id="timer-days">0</div>
+        <p style="font-family: var(--font-clean); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Дней осталось до торжества</p>
+    </section>
+
+    <!-- ЭКРАН 6: ФУТЕР -->
+    <section class="section-footer">
+        <div class="contacts-area">
+            <h3>КОНТАКТЫ</h3>
+            <p>По всем вопросам можно обращаться к нам:</p>
+            <p><strong>Илья (жених)</strong> &nbsp; +375295297558</p>
+            <p><strong>Виталина (невеста)</strong> &nbsp; +375298283268</p>
+            <p><strong>Юрий (ведущий)</strong> &nbsp; +375333789230</p>
+        </div>
+        <img src="bottom_photo.jpg" alt="Фото пары" class="footer-image">
+    </section>
+
+    <script>
+        // Скрипт автоматического расчета дней
+        function countdown() {
+            const targetDate = new Date("July 31, 2026 00:00:00").getTime();
+            const now = new Date().getTime();
+            const gap = targetDate - now;
+
+            const second = 1000;
+            const minute = second * 60;
+            const hour = minute * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            document.getElementById('timer-days').innerText = textDay > 0 ? textDay : 0;
+        }
+        countdown();
+    </script>
+</body>
+</html>
