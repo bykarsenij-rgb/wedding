@@ -33,12 +33,15 @@
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url(img src="main_bg.jpg");
-      background-size: cover; /* или contain */
-      background-repeat: no-repeat;
-      background-position: center top; /* Или просто center, или 0 0 */
-      /* ... другие стили */
-     }
+                       url(img src="main_bg.jpg") no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
 
         .hero .wedding-day {
             font-family: var(--font-clean);
