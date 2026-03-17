@@ -29,18 +29,16 @@
             -webkit-font-smoothing: antialiased;
         }
 
-                      /* 1. ГЛАВНЫЙ ЭКРАН */
-        .hero {
+                       /* 1. ГЛАВНЫЙ ЭКРАН */
+                .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('main_bg.jpg.JPG') no-repeat center top/cover; /* Проверь название файла! */
+            background-image: url('main_bg.jpg.JPG'); /* ПРОВЕРЬ: СОВПАДАЕТ ЛИ ЭТО С ИМЕНЕМ ФАЙЛА? */
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-            position: relative;
         }
 
 
