@@ -30,10 +30,12 @@
         }
 
                /* 1. ГЛАВНЫЙ ЭКРАН */
-        .hero {
+                .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('main_bg.jpg') no-repeat center top/cover;
+            background-image: url('main_bg.jpg.JPG'); /* ПРОВЕРЬ: СОВПАДАЕТ ЛИ ЭТО С ИМЕНЕМ ФАЙЛА? */
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,6 +44,7 @@
             text-align: center;
             position: relative;
         }
+
 
 
         .hero .wedding-day {
