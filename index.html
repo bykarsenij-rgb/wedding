@@ -29,13 +29,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
-               /* 1. ГЛАВНЫЙ ЭКРАН */
-                .hero {
+                      /* 1. ГЛАВНЫЙ ЭКРАН */
+        .hero {
             height: 100vh;
-            background-image: url('main_bg.jpg.JPG'); /* ПРОВЕРЬ: СОВПАДАЕТ ЛИ ЭТО С ИМЕНЕМ ФАЙЛА? */
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: cover;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('main_bg.jpg.JPG') no-repeat center top/cover; /* Проверь название файла! */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -44,6 +42,7 @@
             text-align: center;
             position: relative;
         }
+
 
 
 
@@ -237,12 +236,14 @@ height: 350px;
 
                /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
-            .hero {
-                /* Принудительно повторяем настройки фона для телефонов */
-                background-image: url('main_bg.jpg.JPG') !important; 
-                background-size: cover !important;
-                background-position: center top !important;
-                height: 100vh;
+                .hero {
+        background-image: url('main_bg.jpg.JPG'); 
+        background-size: cover;
+        background-position: center top;
+        height: 100vh;
+    }
+    
+
             }
             .hero h1 { font-size: 3.5rem; } /* Уменьшил шрифт, чтобы влезал */
             .hero .bottom-date { right: 20px; font-size: 1.5rem; }
