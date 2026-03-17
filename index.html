@@ -193,19 +193,52 @@
 
         .btn-send:hover { background: var(--gold-accent); }
 
-        /* 5. ТАЙМЕР */
+                /* 5. ТАЙМЕР */
         .countdown-section {
-            padding: 60px 0;
-            background: #1a1a1a;
+            padding: 80px 0;
+            background: #1a1a1a; /* Темный фон, как у тебя был */
             color: #fff;
             text-align: center;
         }
 
-        .countdown-section #timer-days {
-            font-size: 4rem;
-            font-family: var(--font-accent);
-            color: var(--gold-accent);
+        .timer-title {
+            font-family: var(--font-clean);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            color: #888;
         }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Расстояние между цифрами */
+        }
+
+        .timer-item span {
+            font-size: 3.5rem;
+            font-family: var(--font-accent); /* Красивый шрифт для цифр */
+            color: var(--gold-accent);
+            display: block;
+            line-height: 1;
+        }
+
+        .timer-item p {
+            font-family: var(--font-clean);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        /* Чтобы на телефонах таймер не вылезал за края */
+        @media (max-width: 768px) {
+            .countdown-container { gap: 15px; }
+            .timer-item span { font-size: 2.5rem; }
+        }
+
 
         /* 6. КОНТАКТЫ */
         .section-footer {
@@ -308,11 +341,29 @@ height: 400px;
         </form>
     </section>
 
-    <!-- ЭКРАН 5: СЧЕТЧИК -->
+       <!-- ЭКРАН 5: СЧЕТЧИК -->
     <section class="countdown-section">
-        <div id="timer-days">0</div>
-        <p style="font-family: var(--font-clean); text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem;">Дней осталось до торжества</p>
+        <div class="timer-title">До торжества осталось:</div>
+        <div class="countdown-container">
+            <div class="timer-item">
+                <span id="days">00</span>
+                <p>Дней</p>
+            </div>
+            <div class="timer-item">
+                <span id="hours">00</span>
+                <p>Часов</p>
+            </div>
+            <div class="timer-item">
+                <span id="minutes">00</span>
+                <p>Минут</p>
+            </div>
+            <div class="timer-item">
+                <span id="seconds">00</span>
+                <p>Секунд</p>
+            </div>
+        </div>
     </section>
+
 
     <!-- ЭКРАН 6: ФУТЕР -->
     <section class="section-footer">
@@ -326,22 +377,35 @@ height: 400px;
         <img src="bottom_photo.jpg" alt="Фото пары" class="footer-image">
     </section>
 
-    <script>
-        // Скрипт автоматического расчета дней
-        function countdown() {
+       <script>
+        function updateCountdown() {
             const targetDate = new Date("July 31, 2026 00:00:00").getTime();
             const now = new Date().getTime();
             const gap = targetDate - now;
 
+            // Математика времени
             const second = 1000;
             const minute = second * 60;
             const hour = minute * 60;
             const day = hour * 24;
 
-            const textDay = Math.floor(gap / day);
-            document.getElementById('timer-days').innerText = textDay > 0 ? textDay : 0;
+            // Расчеты
+            const d = Math.floor(gap / day);
+            const h = Math.floor((gap % day) / hour);
+            const m = Math.floor((gap % hour) / minute);
+            const s = Math.floor((gap % minute) / second);
+
+            // Вывод на экран (с проверкой на 0, если дата прошла)
+            document.getElementById('days').innerText = d > 0 ? d : 0;
+            document.getElementById('hours').innerText = h > 0 ? h : 0;
+            document.getElementById('minutes').innerText = m > 0 ? m : 0;
+            document.getElementById('seconds').innerText = s > 0 ? s : 0;
         }
-        countdown();
+
+        // Запускаем функцию каждую секунду
+        setInterval(updateCountdown, 1000);
+        
+        // Запускаем один раз сразу при загрузке, чтобы не ждать секунду
+        updateCountdown();
     </script>
-</body>
-</html>
+
