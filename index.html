@@ -372,23 +372,28 @@ height: 400px;
             до 30 июня 2026 г.
         </div>
 
-        <form class="rsvp-form">
-            <label>Имя *</label>
-            <input type="text" required>
+        <form class="rsvp-form" action="https://formspree.io/f/xojkpyyn" method="POST">
+    <label>Имя *</label>
+    <input type="text" name="Имя" required>
 
-            <label>Фамилия *</label>
-            <input type="text" required>
+    <label>Фамилия *</label>
+    <input type="text" name="Фамилия" required>
 
-            <label>Будете ли вы присутствовать? *</label>
-            <div class="radio-box"><input type="radio" name="attend" id="y"> <label for="y">Да</label> </div>
-            <div class="radio-box"><input type="radio" name="attend" id="n"> <label for="n">Нет</label> </div>
+    <label>Будете ли вы присутствовать? *</label>
+    <div class="radio-box">
+        <input type="radio" name="Присутствие" value="Да" id="y">
+        <label for="y">Да</label>
+    </div>
+    <div class="radio-box">
+        <input type="radio" name="Присутствие" value="Нет" id="n">
+        <label for="n">Нет</label>
+    </div>
 
-            <label>До места торжества будет организован транспорт. Нужен ли он вам? *</label>
-            <div class="radio-box"><input type="radio" name="bus" id="by"> <label for="by">Да</label> </div>
-            <div class="radio-box"><input type="radio" name="bus" id="bn"> <label for="bn">Нет, доберусь на своем транспорте</label> </div>
+    <button type="submit" class="btn-send">Отправить</button>
+</form>
+  <form class="rsvp-form" action="https://formspree.io/f/xojkpyyn" method="POST">
+    
 
-            <button type="submit" class="btn-send">Отправить</button>
-        </form>
     </section>
 
        <!-- ЭКРАН 5: СЧЕТЧИК -->
