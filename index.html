@@ -372,25 +372,38 @@ height: 400px;
             до 30 июня 2026 г.
         </div>
 
-        <form class="rsvp-form" action="https://formspree.io/f/xojkpyyn" method="POST">
-    <label>Имя *</label>
+        <!-- Замени ВАШ_ID на тот код, который даст Formspree -->
+<form class="rsvp-form" action="https://formspree.io/f/xojkpyyn" method="POST">
+    
+    <label>ИМЯ *</label>
     <input type="text" name="Имя" required>
 
-    <label>Фамилия *</label>
+    <label>ФАМИЛИЯ *</label>
     <input type="text" name="Фамилия" required>
 
-    <label>Будете ли вы присутствовать? *</label>
+    <label>БУДЕТЕ ЛИ ВЫ ПРИСУТСТВОВАТЬ? *</label>
     <div class="radio-box">
-        <input type="radio" name="Присутствие" value="Да" id="y">
-        <label for="y">Да</label>
+        <input type="radio" name="Присутствие" value="ДА" id="y" required>
+        <label for="y">ДА</label>
     </div>
     <div class="radio-box">
-        <input type="radio" name="Присутствие" value="Нет" id="n">
-        <label for="n">Нет</label>
+        <input type="radio" name="Присутствие" value="НЕТ" id="n">
+        <label for="n">НЕТ</label>
+    </div>
+    
+    <label>ДО МЕСТА ТОРЖЕСТВА БУДЕТ ОРГАНИЗОВАН ТРАНСПОРТ. НУЖЕН ЛИ ОН ВАМ? *</label>
+    <div class="radio-box">
+        <input type="radio" name="Нужен_транспорт" value="ДА" id="by" required>
+        <label for="by">ДА</label>
+    </div>
+    <div class="radio-box">
+        <input type="radio" name="Нужен_транспорт" value="НЕТ, доберусь сам" id="bn">
+        <label for="bn">НЕТ, ДОБЕРУСЬ НА СВОЕМ ТРАНСПОРТЕ</label>
     </div>
 
-    <button type="submit" class="btn-send">Отправить</button>
+    <button type="submit" class="btn-send">ОТПРАВИТЬ</button>
 </form>
+        
   <form class="rsvp-form" action="https://formspree.io/f/xojkpyyn" method="POST">
     
 
