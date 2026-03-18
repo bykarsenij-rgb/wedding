@@ -260,10 +260,18 @@
             color: #fff;
         }
 
-        /* Чтобы на телефонах таймер не вылезал за края */
+               /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
-            .countdown-container { gap: 15px; }
-            .timer-item span { font-size: 2.5rem; }
+            
+            /* Вставь это сюда: */
+            .countdown-section {
+                background-attachment: scroll !important;
+                background-position: center center !important;
+                padding: 60px 10px !important;
+            }
+
+            .hero h1 { font-size: 4rem; }
+            /* ... остальной твой мобильный код ... */
         }
 
 
