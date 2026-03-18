@@ -261,14 +261,16 @@
             color: #fff;
         }
 
-               /* МОБИЛЬНАЯ ВЕРСИЯ */
-        @media (max-width: 768px) {
+                     @media (max-width: 768px) {
+            .countdown-container { gap: 15px; }
+            .timer-item span { font-size: 2.5rem; }
             
-                       .invite-message {
-                font-size: 1.6rem; /* Чуть уменьшим шрифт для мобилки */
-                margin-bottom: 50px;
-                padding: 0 10px; /* Добавим небольшие отступы от краев экрана */
+            .countdown-section {
+                background-attachment: scroll !important;
+                background-position: center center !important;
             }
+        }
+
 
 
 
