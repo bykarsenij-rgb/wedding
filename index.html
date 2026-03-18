@@ -76,14 +76,15 @@
             flex-direction: column;
         }
 
-        .invite-message {
+                .invite-message {
             font-size: 2rem;
             line-height: 1.4;
             max-width: 600px;
-            text-align: left;
-            margin-bottom: 80px;
+            text-align: center; /* Изменили с left на center */
+            margin: 0 auto 80px auto; /* Добавили auto по бокам, чтобы сам блок встал по центру */
             font-weight: 300;
         }
+
 
         .flex-details {
             display: flex;
@@ -263,16 +264,12 @@
                /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 768px) {
             
-            /* Вставь это сюда: */
-            .countdown-section {
-                background-attachment: scroll !important;
-                background-position: center center !important;
-                padding: 60px 10px !important;
+                       .invite-message {
+                font-size: 1.6rem; /* Чуть уменьшим шрифт для мобилки */
+                margin-bottom: 50px;
+                padding: 0 10px; /* Добавим небольшие отступы от краев экрана */
             }
 
-            .hero h1 { font-size: 4rem; }
-            /* ... остальной твой мобильный код ... */
-        }
 
 
         /* 6. КОНТАКТЫ */
