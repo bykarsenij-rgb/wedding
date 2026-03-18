@@ -217,12 +217,16 @@
         
 
                 /* 5. ТАЙМЕР */
-        .countdown-section {
-            padding: 80px 0;
-            background: #1a1a1a; /* Темный фон, как у тебя был */
-            color: #fff;
-            text-align: center;
-        }
+       .countdown-section {
+    padding: 100px 0;
+    /* Накладываем темный слой (0.6), чтобы золотые цифры хорошо читались */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                url('sahur_bg.jpg') no-repeat center center/cover;
+    background-attachment: fixed; /* Фото будет стоять на месте при скролле */
+    color: #fff;
+    text-align: center;
+}
+
 
         .timer-title {
             font-family: var(--font-clean);
